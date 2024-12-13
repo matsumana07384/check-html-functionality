@@ -4,10 +4,10 @@ const app = express();
 const port = 3000;
 
 // 静的ファイルの提供
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'main.html'));
+  res.sendFile(path.join(__dirname, 'docs', 'main.html'));
 });
 
 app.listen(port, () => {
