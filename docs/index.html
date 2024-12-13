@@ -12,9 +12,13 @@
 </head>
 <body>
   <section class="main">
-    <h1>Title</h1>
     <div class="main-content">
-      <p>発信先電話番号：<a id="phoneLink" href="tel:03-0000-0000">03-0000-0000</a></p>
+      <h1>電話番号リンクの表示</h1>
+      <label for="phoneNumber">電話番号を入力してください:（ハイフありなしどちらでも可）</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber">
+      <button id="submitBtn">表示</button>
+      <p>以下を押下して電話をかけてください</p>
+      <div id="linkContainer"></div>
     </div>
     <div class="sub-content" id="targetSection">
       <p>リンク先</p>
