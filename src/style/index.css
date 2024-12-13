@@ -1,0 +1,12 @@
+.main-content {
+  margin-bottom: 1000px;
+}
+
+.sub-content {
+  padding: 100px;
+  background-color: hsla(48, 100%, 50%, 0.5); /* 透明度50%の黄色 */
+}
+
+.main {
+  margin-bottom: 1000px;
+}
