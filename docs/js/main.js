@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-  document.getElementById('submitBtn').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('submitBtn').addEventListener('click', function () {
     const phoneNumber = document.getElementById('phoneNumber').value;
     const linkContainer = document.getElementById('linkContainer');
 
@@ -11,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
       link.href = `tel:${phoneNumber}`;
       link.textContent = phoneNumber;
 
+      // クリックイベントリスナーを追加
+      link.addEventListener('click', function (event) {
+        // event.preventDefault();
+        setTimeout(function () {
+          window.location.href = '#targetSection';
+        }, 1000);
+      });
+
       // 既存のリンクをクリアして新しいリンクを追加
       linkContainer.innerHTML = '';
       linkContainer.appendChild(link);
@@ -20,16 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  const link = document.getElementById('phoneLink');
-  link?.addEventListener('click', function() {
-    setTimeout(function() {
-      window.location.href = '#targetSection';
-    }, 1000);
-  });
-
   window.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
       alert('active');
     }
-  })
+  });
 });
