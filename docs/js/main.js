@@ -11,11 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
       link.textContent = phoneNumber;
 
       // クリックイベントリスナーを追加
-      link.addEventListener('click', function (event) {
-        // event.preventDefault();
+      link.addEventListener('click', function () {
         setTimeout(function () {
           window.location.href = '#targetSection';
         }, 1000);
+
+        window.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') {
+            alert('active');
+          }
+        });
       });
 
       // 既存のリンクをクリアして新しいリンクを追加
@@ -24,12 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       // 電話番号が入力されていない場合の処理
       linkContainer.innerHTML = '電話番号を入力してください。';
-    }
-  });
-
-  window.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') {
-      alert('active');
     }
   });
 });
